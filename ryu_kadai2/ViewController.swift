@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         }else if changeCalcu.selectedSegmentIndex == 2 {
             sumNum = num1 * num2
             sumLabel.text = "\(sumNum)"
-        }else if changeCalcu.selectedSegmentIndex == 3 && num1 != 0 && num2 != 0{
+        }else if changeCalcu.selectedSegmentIndex == 3 && num2 != 0{
             sumNum = num1 / num2
             sumLabel.text = "\(sumNum)"
         }else{
