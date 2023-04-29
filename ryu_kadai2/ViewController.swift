@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField1: UITextField!
     @IBOutlet weak var textField2: UITextField!
     
-    @IBOutlet weak var changeCalcu: UISegmentedControl!
+    @IBOutlet weak var changeCalculation: UISegmentedControl!
     
     @IBOutlet weak var sumLabel: UILabel!
     
@@ -21,24 +21,21 @@ class ViewController: UIViewController {
         let num1 = Double(textField1.text ?? "") ?? 0
         let num2 = Double(textField2.text ?? "") ?? 0
         
-        var sumNum:Double
-        
-        if changeCalcu.selectedSegmentIndex == 0 {
-           sumNum = num1 + num2
-            sumLabel.text = "\(sumNum)"
-        }else if changeCalcu.selectedSegmentIndex == 1 {
-            sumNum = num1 - num2
-            sumLabel.text = "\(sumNum)"
-        }else if changeCalcu.selectedSegmentIndex == 2 {
-            sumNum = num1 * num2
-            sumLabel.text = "\(sumNum)"
-        }else if changeCalcu.selectedSegmentIndex == 3 {
-            sumNum = num1 / num2
-            sumLabel.text = "\(sumNum)"
+        switch changeCalculation.selectedSegmentIndex {
+        case 0:
+            sumLabel.text = "\(num1 + num2)"
+        case 1:
+            sumLabel.text = "\(num1 - num2)"
+        case 2:
+            sumLabel.text = "\(num1 * num2)"
+        case 3:
             if num2 == 0 {
                 sumLabel.text = "割る数には0以外を入力して下さい"
+            } else {
+                sumLabel.text = "\(num1 / num2)"
             }
+        default:
+            assertionFailure("selectedSegmentIndex is invalid.")
         }
     }
 }
-

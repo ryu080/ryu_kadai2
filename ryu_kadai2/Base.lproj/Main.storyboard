@@ -73,7 +73,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="changeCalcu" destination="ZNR-rI-Zmw" id="7us-W7-cww"/>
+                        <outlet property="changeCalculation" destination="ZNR-rI-Zmw" id="7us-W7-cww"/>
                         <outlet property="sumLabel" destination="alH-qr-kJI" id="NIb-EH-3oi"/>
                         <outlet property="textField1" destination="0JZ-I5-NNs" id="Ki2-xu-7FH"/>
                         <outlet property="textField2" destination="GVe-rY-fM2" id="ceZ-5f-hNb"/>
